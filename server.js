@@ -3,13 +3,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 8158;
+
+// Use Render's provided port, fallback to 3000 locally
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-// Serve static files from your Ringtones folder
-app.use(express.static('/storage/emulated/0/Ringtones'));
+// Serve static files from the current project directory
+app.use(express.static(__dirname));
 
 let messages = [];
 
@@ -33,5 +35,5 @@ app.get('/messages', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Chat server running on http://localhost:${PORT}`);
+  console.log(`Chat server running on port ${PORT}`);
 });
