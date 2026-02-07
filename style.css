@@ -1,0 +1,68 @@
+/* Floating chat icon */
+#chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Chat window */
+#chat-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Hidden state (critical for toggle) */
+.hidden {
+  display: none !important;
+}
+
+/* Header */
+#chat-header {
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Messages area */
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+/* Input + button */
+#chat-input {
+  border: none;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  flex: 1;
+}
+
+#send-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
