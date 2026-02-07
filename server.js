@@ -4,13 +4,13 @@ const cors = require('cors');
 
 const app = express();
 
-// Use Render's provided port, fallback to 3000 locally
+// Use Render's provided port
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-// Serve static files from the current project directory
+// Serve static files from the current project folder
 app.use(express.static(__dirname));
 
 let messages = [];
