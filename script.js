@@ -20,7 +20,7 @@ document.getElementById("send-btn").addEventListener("click", async () => {
   if (!userMessage) return;
 
   try {
-    const response = await fetch("http://localhost:8158/chat", {
+    const response = await fetch("/chat", {   // ✅ relative path, works on Render
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userMessage })
@@ -42,7 +42,7 @@ document.getElementById("send-btn").addEventListener("click", async () => {
 // Auto-update to show admin replies
 async function loadMessages() {
   try {
-    const res = await fetch("http://localhost:8158/messages");
+    const res = await fetch("/messages");   // ✅ relative path
     const data = await res.json();
     const chatBox = document.getElementById("chat-box");
     chatBox.innerHTML = "";
