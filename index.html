@@ -5,220 +5,41 @@
   <title>SecureBank Online Banking</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f6f9;
-      color: #333;
-    }
-    header {
-      background: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    nav {
-      background: #0055a5;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 12px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), 
-                  url('https://via.placeholder.com/1200x400/003366/ffffff?text=SecureBank+Online+Banking') no-repeat center;
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: auto;
-    }
-    .dashboard {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .dashboard h2 {
-      color: #003366;
-      margin-bottom: 15px;
-    }
-    .account-summary {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .account-summary .card {
-      flex: 1;
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      min-width: 200px;
-    }
-    .account-summary h3 {
-      margin: 0;
-      color: #0055a5;
-    }
-    .quick-actions {
-      text-align: center;
-      padding: 20px;
-    }
-    .quick-actions button {
-      margin: 10px;
-      padding: 12px 20px;
-      background: #0055a5;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s;
-    }
-    .quick-actions button:hover {
-      background: #003366;
-    }
-    .announcements {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .announcements h2 {
-      color: #003366;
-      margin-bottom: 10px;
-    }
-    .announcements ul {
-      list-style: none;
-      padding: 0;
-    }
-    .announcements li {
-      background: white;
-      margin: 8px 0;
-      padding: 12px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-    /* Chat widget styles */
-    #chat-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 90%;
-      max-width: 400px;
-      height: 70%;
-      max-height: 500px;
-      border: 1px solid #ccc;
-      background: #fff;
-      display: none;
-      flex-direction: column;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      border-radius: 8px;
-    }
-    #chat-header {
-      background: #003366;
-      color: white;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-    #close-btn {
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #chat-box {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      background: #f9f9f9;
-    }
-    .message {
-      margin: 5px 0;
-      padding: 8px;
-      border-radius: 5px;
-      font-size: 14px;
-      word-wrap: break-word;
-    }
-    .customer {
-      background: #e6f2ff;
-      text-align: left;
-    }
-    .admin {
-      background: #d9fdd3;
-      text-align: right;
-    }
-    .timestamp {
-      font-size: 11px;
-      color: #666;
-      display: block;
-      margin-top: 2px;
-    }
-    #chat-input {
-      flex: 1;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    #send-btn {
-      padding: 8px;
-      background: #003366;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-left: 5px;
-      border-radius: 4px;
-    }
-    #chat-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #003366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    @media (max-width: 600px) {
-      .features, .account-summary { flex-direction: column; align-items: center; }
-      #chat-widget { width: 95%; height: 75%; right: 2.5%; bottom: 10px; }
-      #chat-icon { width: 50px; height: 50px; font-size: 20px; }
-    }
+    /* --- styles omitted for brevity, same as before --- */
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f9; color: #333; }
+  header { background: #003366; color: white; padding: 20px; text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 1px; }
+  nav { background: #0055a5; display: flex; justify-content: center; gap: 30px; padding: 12px; }
+  nav a { color: white; text-decoration: none; font-size: 15px; font-weight: bold; transition: color 0.3s; }
+  nav a:hover { color: #ffcc00; }
+  .hero { background: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), url('https://via.placeholder.com/1200x400/003366/ffffff?text=SecureBank+Online+Banking') no-repeat center; background-size: cover; color: white; text-align: center; padding: 80px 20px; }
+  .hero h1 { font-size: 36px; margin-bottom: 10px; }
+  .hero p { font-size: 18px; max-width: 600px; margin: auto; }
+  .dashboard { padding: 30px; max-width: 900px; margin: auto; }
+  .dashboard h2 { color: #003366; margin-bottom: 15px; }
+  .account-summary { display: flex; gap: 20px; flex-wrap: wrap; }
+  .account-summary .card { flex: 1; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); min-width: 200px; }
+  .account-summary h3 { margin: 0; color: #0055a5; }
+  .quick-actions { text-align: center; padding: 20px; }
+  .quick-actions button { margin: 10px; padding: 12px 20px; background: #0055a5; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background 0.3s; }
+  .quick-actions button:hover { background: #003366; }
+  .announcements { padding: 30px; max-width: 900px; margin: auto; }
+  .announcements h2 { color: #003366; margin-bottom: 10px; }
+  .announcements li { background: white; margin: 8px 0; padding: 12px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  footer { background: #003366; color: white; text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; }
+  #chat-widget { position: fixed; bottom: 20px; right: 20px; width: 90%; max-width: 400px; height: 70%; max-height: 500px; border: 1px solid #ccc; background: #fff; display: none; flex-direction: column; box-shadow: 0 0 10px rgba(0,0,0,0.3); border-radius: 8px; }
+  #chat-header { background: #003366; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+  #close-btn { cursor: pointer; font-weight: bold; }
+  #chat-box { flex: 1; padding: 10px; overflow-y: auto; background: #f9f9f9; }
+  .message { margin: 5px 0; padding: 8px; border-radius: 5px; font-size: 14px; word-wrap: break-word; }
+  .customer { background: #e6f2ff; text-align: left; }
+  .admin { background: #d9fdd3; text-align: right; }
+  #chat-input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+  #send-btn { padding: 8px; background: #003366; color: white; border: none; cursor: pointer; margin-left: 5px; border-radius: 4px; }
+  #chat-icon { position: fixed; bottom: 20px; right: 20px; background: #003366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+  #customer-form { padding: 15px; display: flex; flex-direction: column; }
+  #customer-form input { margin: 5px 0; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+  #customer-form button { margin-top: 10px; padding: 10px; background: #0055a5; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  @media (max-width: 600px) { #chat-widget { width: 95%; height: 75%; right: 2.5%; bottom: 10px; } #chat-icon { width: 50px; height: 50px; font-size: 20px; } }
   </style>
 </head>
 <body>
@@ -235,17 +56,12 @@
     <p>Your trusted partner in secure online banking. Manage your money with confidence, anytime, anywhere.</p>
   </div>
 
+  <!-- Balance section -->
   <section class="dashboard">
     <h2>Dashboard</h2>
     <div class="account-summary">
-      <div class="card">
-        <h3>Checking Account</h3>
-        <p>Balance: $250,000</p>
-      </div>
-      <div class="card">
-        <h3>Savings Account</h3>
-        <p>Balance: $1,200,000</p>
-      </div>
+      <div class="card"><h3>Checking Account</h3><p>Balance: $250,000</p></div>
+      <div class="card"><h3>Savings Account</h3><p>Balance: $1,200,000</p></div>
     </div>
   </section>
 
@@ -265,9 +81,7 @@
     </ul>
   </section>
 
-  <footer>
-    &copy; 2026 SecureBank. All rights reserved. | Contact: support@securebank.com
-  </footer>
+  <footer>&copy; 2026 SecureBank. All rights reserved. | Contact: support@securebank.com</footer>
 
   <!-- Floating chat icon -->
   <div id="chat-icon">💬</div>
@@ -278,13 +92,79 @@
       <span>Customer Care</span>
       <span id="close-btn">✖</span>
     </div>
-    <div id="chat-box"></div>
-    <div style="display:flex; padding:10px;">
+    <!-- Customer details form -->
+    <form id="customer-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="text" id="account" placeholder="Account Number" required>
+      <input type="text" id="phone" placeholder="Phone Number" required>
+      <button type="submit">Start Chat</button>
+    </form>
+    <!-- Chat messages -->
+    <div id="chat-box" style="display:none;"></div>
+    <div id="input-box" style="display:none; padding:10px; display:flex;">
       <input type="text" id="chat-input" placeholder="Type your message...">
       <button id="send-btn">Send</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    let customer = null;
+
+    // Show chat widget
+    document.getElementById("chat-icon").addEventListener("click", () => {
+      document.getElementById("chat-widget").style.display = "flex";
+    });
+    document.getElementById("close-btn").addEventListener("click", () => {
+      document.getElementById("chat-widget").style.display = "none";
+    });
+
+    // Handle customer form
+    document.getElementById("customer-form").addEventListener("submit", e => {
+      e.preventDefault();
+      customer = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        account: document.getElementById("account").value,
+        phone: document.getElementById("phone").value
+      };
+      document.getElementById("customer-form").style.display = "none";
+      document.getElementById("chat-box").style.display = "block";
+      document.getElementById("input-box").style.display = "flex";
+    });
+
+    // Send message
+    async function sendMessage() {
+      const input = document.getElementById("chat-input");
+      const text = input.value.trim();
+      if (!text) return;
+
+      await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, customer })
+      });
+
+      input.value = "";
+      loadMessages();
+    }
+
+    // Load messages
+    async function loadMessages() {
+      const res = await fetch("/messages");
+      const data = await res.json();
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML = "";
+      data.forEach(msg => {
+        const div = document.createElement("div");
+        div.className = "message " + (msg.from === "admin" ? "admin" : "customer");
+        div.textContent = msg.from + ": " + msg.text;
+        chatBox.appendChild(div);
+      });
+    }
+
+    document.getElementById("send-btn").addEventListener("click", sendMessage);
+    setInterval(loadMessages, 3000);
+  </script>
 </body>
 </html>

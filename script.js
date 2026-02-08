@@ -14,22 +14,38 @@ function getTimestamp() {
   return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
+let customer = null;
+
+// Handle customer form submission
+document.getElementById("customer-form").addEventListener("submit", e => {
+  e.preventDefault();
+  customer = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    account: document.getElementById("account").value,
+    phone: document.getElementById("phone").value
+  };
+  document.getElementById("customer-form").style.display = "none";
+  document.getElementById("chat-box").style.display = "block";
+  document.getElementById("input-box").style.display = "flex";
+});
+
 // Send message
 document.getElementById("send-btn").addEventListener("click", async () => {
   const userMessage = document.getElementById("chat-input").value.trim();
   if (!userMessage) return;
 
   try {
-    const response = await fetch("/chat", {   // ✅ relative path, works on Render
+    const response = await fetch("/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userMessage })
+      body: JSON.stringify({ message: userMessage, customer })
     });
 
     const data = await response.json();
 
     const chatBox = document.getElementById("chat-box");
-    chatBox.innerHTML += `<div class="message customer">You: ${userMessage}<span class="timestamp">${getTimestamp()}</span></div>`;
+    chatBox.innerHTML += `<div class="message customer">${customer.name}: ${userMessage}<span class="timestamp">${getTimestamp()}</span></div>`;
     chatBox.innerHTML += `<div class="message admin">Server: ${data.reply}<span class="timestamp">${getTimestamp()}</span></div>`;
 
     document.getElementById("chat-input").value = "";
@@ -42,12 +58,12 @@ document.getElementById("send-btn").addEventListener("click", async () => {
 // Auto-update to show admin replies
 async function loadMessages() {
   try {
-    const res = await fetch("/messages");   // ✅ relative path
+    const res = await fetch("/messages");
     const data = await res.json();
     const chatBox = document.getElementById("chat-box");
     chatBox.innerHTML = "";
     data.forEach(msg => {
-      const roleClass = msg.from === "customer" ? "customer" : "admin";
+      const roleClass = msg.from === "admin" ? "admin" : "customer";
       chatBox.innerHTML += `<div class="message ${roleClass}">${msg.from}: ${msg.text}<span class="timestamp">${getTimestamp()}</span></div>`;
     });
     chatBox.scrollTop = chatBox.scrollHeight; // auto-scroll
