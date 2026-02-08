@@ -22,7 +22,7 @@
 
   <script>
     async function loadMessages() {
-      const res = await fetch("http://localhost:8158/messages");
+      const res = await fetch("/messages");   // ✅ relative path
       const data = await res.json();
       const messagesDiv = document.getElementById("messages");
       messagesDiv.innerHTML = "";
@@ -37,7 +37,7 @@
       const reply = document.getElementById("reply-input").value.trim();
       if (!reply) return;
 
-      await fetch("http://localhost:8158/reply", {
+      await fetch("/chat", {   // ✅ use /chat instead of /reply
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: reply })
